@@ -43,8 +43,7 @@ class EtsyOAuthClient(oauth.Client):
         self.token = self.get_access_token(oauth_verifier)
 
     def do_oauth_request(self, url, http_method, content_type, body):
-        resp, content = self.request(url, http_method, body=body, headers={
-                                     'Content-Type': content_type})
+        resp, content = self.request(url, http_method, body=body, headers={ 'Content-Type': content_type } if content_type else None)
 
         if self.logger:
             self.logger.debug('do_oauth_request: content = %r' % content)
