@@ -1,13 +1,13 @@
 from __future__ import with_statement
 from contextlib import closing
 import simplejson as json
-import urllib2
-from urllib import urlencode
+import urllib3
+from urllib.parse import urlencode
 import os
 import re
 import tempfile
 import time
-from _multipartformdataencode import encode_multipart_formdata
+from etsy._multipartformdataencode import encode_multipart_formdata
 
 from .exceptions import EtsyConcurrencyError, EtsyAPILimitError
 

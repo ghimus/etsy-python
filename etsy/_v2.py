@@ -1,6 +1,6 @@
 import urllib  # noqa
-from _core import API, missing
-from etsy_env import EtsyEnvProduction
+from etsy._core import API, missing
+from etsy.etsy_env import EtsyEnvProduction
 
 try:
     from urlparse import parse_qsl  # noqa

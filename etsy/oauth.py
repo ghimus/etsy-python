@@ -1,7 +1,7 @@
 import oauth2 as oauth
 import urllib
 from cgi import parse_qsl
-from etsy_env import EtsyEnvProduction
+from etsy.etsy_env import EtsyEnvProduction
 
 EtsyOAuthToken = oauth.Token
 
