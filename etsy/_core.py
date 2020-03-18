@@ -1,8 +1,8 @@
 from __future__ import with_statement
 from contextlib import closing
 import simplejson as json
-import urllib3
 from urllib.parse import urlencode
+import urllib
 import os
 import re
 import tempfile
@@ -277,7 +277,7 @@ class API(object):
 
     def _get_url(self, url, http_method, content_type, body):
         self.log("API._get_url: url = %r" % url)
-        with closing(urllib2.urlopen(url)) as f:
+        with closing(urllib.request.urlopen(url)) as f:
             return f.read()
 
     def _get(self, http_method, url, **kwargs):
