@@ -60,8 +60,6 @@ class TypeChecker(object):
         return True, value
 
     def check_int(self, value):
-        if isinstance(value, long):  # noqa
-            return True, value
         return isinstance(value, int), value
 
     def check_float(self, value):
@@ -70,7 +68,7 @@ class TypeChecker(object):
         return isinstance(value, float), value
 
     def check_string(self, value):
-        return isinstance(value, basestring), value  # noqa
+        return isinstance(value, str), value  # noqa
 
 
 class APIMethod(object):
