@@ -1,8 +1,14 @@
 from __future__ import with_statement
 from contextlib import closing
 import simplejson as json
-from urllib.parse import urlencode
-from urllib.request import urlopen
+
+try:
+    from urllib import urlencode
+    from urllib import urlopen
+except ImportError:
+    from urllib.parse import urlencode
+    from urllib.request import urlopen
+
 import os
 import re
 import tempfile
